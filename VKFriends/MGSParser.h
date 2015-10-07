@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MGSNetwork.h"
 
-@interface MGSParser : NSObject
+@protocol MGSParser <NSObject>
+
+@property (strong, nonatomic) NSOperationQueue *queue;
+
+- (NSOperation *)parseFromData:(NSData *)aData onComplete:(OnComplete)aOnComplete;
 
 @end

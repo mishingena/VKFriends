@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class MGSServiceLayer;
+@class MGSServiceLayer, MGSCacheLayer;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong, readonly) MGSServiceLayer *serviceLayer;
+@property (nonatomic, strong, readonly) MGSCacheLayer *cacheLayer;
 
 @property (strong, nonatomic) UIWindow *window;
 

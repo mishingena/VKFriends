@@ -14,6 +14,11 @@
 
 @protocol MGSAuthorizationServiceDelegate <NSObject>
 
+@optional
+
+- (void)webViewDidStartLoad:(UIWebView *)webView;
+- (void)webViewDidFinishLoad:(UIWebView *)webView;
+
 - (void)authorizationServiceDidStart:(MGSAuthorizationService *)service;
 - (void)authorizationServiceDidComplete:(MGSAuthorizationService *)service;
 - (void)authorizationServiceDidCancel:(MGSAuthorizationService *)service;
@@ -25,9 +30,11 @@
 
 @property (nonatomic, weak) id<MGSAuthorizationServiceDelegate> delegate;
 
-- (instancetype)initWithTransportLayer:(MGSAuthorizationTransportLayer *)transportLayer;
+- (instancetype)initWithLoginTransportLayer:(MGSAuthorizationTransportLayer *)loginTransportLayer
+                       logoutTransportLayer:(MGSAuthorizationTransportLayer *)logoutTransportLayer;
 
 - (void)authorizeInWebView:(UIWebView *)webView withCompletion:(OnComplete)block;
+- (void)logoutInWebView:(UIWebView *)webView withCompletion:(OnComplete)block;
 - (void)cancel;
 
 @end

@@ -12,23 +12,27 @@
 #import "NSString+MGS.h"
 #import "MGSAuthorizationCredentials.h"
 #import "MGSCredentialsStorage.h"
+#import "MGSCacheLayer.h"
 
 @import UIKit;
 
 @interface MGSAuthorizationService () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
-@property (nonatomic, strong) MGSAuthorizationTransportLayer *tranportLayer;
+@property (nonatomic, strong) MGSAuthorizationTransportLayer *loginTransportLayer;
+@property (nonatomic, strong) MGSAuthorizationTransportLayer *logoutTransportLayer;
 @property (nonatomic, copy) OnComplete completionBlock;
 
 @end
 
 @implementation MGSAuthorizationService
 
-- (instancetype)initWithTransportLayer:(MGSAuthorizationTransportLayer *)transportLayer {
+- (instancetype)initWithLoginTransportLayer:(MGSAuthorizationTransportLayer *)loginTransportLayer
+                       logoutTransportLayer:(MGSAuthorizationTransportLayer *)logoutTransportLayer {
     self = [super init];
     if (self) {
-        _tranportLayer = transportLayer;
+        _loginTransportLayer = loginTransportLayer;
+        _logoutTransportLayer = logoutTransportLayer;
     }
     return self;
 }
@@ -37,11 +41,24 @@
     self.webView = webView;
     self.completionBlock = [block copy];
     webView.delegate = self;
-    [webView loadRequest:[self.tranportLayer request]];
+    [webView loadRequest:[self.loginTransportLayer request]];
     
     if ([self.delegate respondsToSelector:@selector(authorizationServiceDidStart:)]) {
         [self.delegate authorizationServiceDidStart:self];
     }
+}
+
+- (void)logoutInWebView:(UIWebView *)webView withCompletion:(OnComplete)block {
+    
+    //vk api почему то не позволяет разлогиниться
+    [MGSCredentialsStorage resetCredentials];
+    [MGSNetwork clearCache];
+    
+    //удаляю файлы из кеша
+    [AppCacheLayer clean:^(BOOL contextDidSave, NSError *error) {
+        block(nil, error);
+    }];
+    
 }
 
 - (void)cancel {
@@ -72,10 +89,16 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    
+    if ([self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
+        [self.delegate webViewDidStartLoad:webView];
+    }
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+        [self.delegate webViewDidFinishLoad:webView];
+    }
+    
     NSString *webViewRequestString = [[[webView request] URL] absoluteString];
     
     // Если есть токен сохраняем его
@@ -95,16 +118,18 @@
                                                 innerString:webViewRequestString];
         double tokenExpires = expiresIn.doubleValue;
         
+        NSError *error = nil;
+        
         if (!userID) {
-            NSError *error = [NSError mgs_errorWithDescription:@"No user id"];
+            error = [NSError mgs_errorWithDescription:@"No user id"];
             [self sendError:error];
         }
         
         if (!accessToken) {
-            NSError *error = [NSError mgs_errorWithDescription:@"No access token"];
+            error = [NSError mgs_errorWithDescription:@"No access token"];
             [self sendError:error];
         }
-        
+    
         NSDate *expireDate = [NSDate dateWithTimeIntervalSinceNow:tokenExpires];
         
         MGSAuthorizationCredentials *authCredentials = [MGSAuthorizationCredentials new];
@@ -123,9 +148,13 @@
         }
         
     } else if ([webViewRequestString rangeOfString:@"error"].location != NSNotFound) {
-        NSError *error = [NSError mgs_errorWithCode:12 description:@"Unknown error"];
+        NSError *error = [NSError mgs_errorWithCode:12 description:@"Неизвестная ошибка"];
         [self sendError:error];
-    }
+    } //else {
+//        if (self.completionBlock) {
+//            self.completionBlock(nil, nil);
+//        }
+//    }
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

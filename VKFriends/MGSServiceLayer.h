@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class MGSAuthorizationService;
+@class MGSAuthorizationService, MGSService;
 
 @interface MGSServiceLayer : NSObject
 
-@property (nonatomic, strong, readonly) MGSAuthorizationService *authorizationLoginService;
+@property (nonatomic, strong, readonly) MGSAuthorizationService *authorizationService;
+@property (nonatomic, strong, readonly) MGSService *friendsListService;
 
 - (instancetype)initWithServerURL:(NSString *)serverURL applicationID:(NSString *)appID;
 

@@ -14,14 +14,19 @@ typedef void(^OnComplete)(id __nullable result, NSError * __nullable error);
 
 @interface MGSNetwork : NSObject
 
+//+ (BOOL)isReachable;
++ (void)isReachable:(void(^)(BOOL reachable))completion;
+
 @end
 
 @interface MGSNetwork (Path)
 
 MGS_EXTERN NSString * const __nonnull MGSServerURLPath;
 MGS_EXTERN NSString * const __nonnull MGSAuthorizationServerURLPath;
-MGS_EXTERN NSString * const __nonnull MGSAuthorizationPath;
 MGS_EXTERN NSString * const __nonnull MGSAuthorizationRedirectURLPath;
+MGS_EXTERN NSString * const __nonnull MGSAuthorizationLoginMethodPath;
+MGS_EXTERN NSString * const __nonnull MGSAuthorizationLogoutMethodPath;
+MGS_EXTERN NSString * const __nonnull MGSFriendsMethodPath;
 
 @end
 
@@ -42,7 +47,15 @@ MGS_EXTERN NSString * const __nonnull MGSDomainError;
 
 typedef NS_OPTIONS(NSUInteger, MGSHTTPMethod) {
     MGSHTTPMethodGet = 0,
-    MGSHTTPMethodPost
+    MGSHTTPMethodPost,
+    MGSHTTPMethodPut,
+    MGSHTTPMethodDelete
 };
+
+@end
+
+@interface MGSNetwork (Cache)
+
++ (void)clearCache;
 
 @end

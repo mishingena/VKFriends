@@ -42,10 +42,15 @@
 
 - (NSURLRequest *)createRequest {
     NSString *parametersString = [self.parameters parametersString];
-    NSString *requestString = [NSString stringWithFormat:@"%@/%@?%@", self.serverURL, self.path, parametersString];
+    NSString *requestString = [NSString stringWithFormat:@"%@/%@", self.serverURL, self.path];
+    if (parametersString) {
+        requestString = [NSString stringWithFormat:@"%@?%@", requestString, parametersString];
+    }
     
     NSURL *url = [NSURL URLWithString:requestString];
-    return [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    return request;
+//    return [NSURLRequest requestWithURL:url];
 }
 
 @end

@@ -7,17 +7,57 @@
 //
 
 #import "MGSNetwork.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation MGSNetwork
+
+//+ (BOOL)isReachable {
+//    return [AFNetworkReachabilityManager sharedManager].isReachable;
+//}
+
+//+ (void)isReachable:(void (^)(BOOL))completion {
+//    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+//        switch (status) {
+//            case AFNetworkReachabilityStatusUnknown:
+//            case AFNetworkReachabilityStatusReachableViaWWAN:
+//            case AFNetworkReachabilityStatusReachableViaWiFi:
+//                //available
+//                break;
+//            case AFNetworkReachabilityStatusNotReachable:
+//                //not available
+//                break;
+//            default:
+//                break;
+//        }
+//        
+//        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+//        
+//    }];
+//}
+
+
++ (void)isReachable:(void (^)(BOOL))completion {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            completion(NO);
+        } else {
+            completion(YES);
+        }
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
 
 @end
 
 @implementation MGSNetwork (Path)
 
 NSString * const MGSAuthorizationServerURLPath = @"https://oauth.vk.com";
-NSString * const MGSServerURLPath = @"http://api.vk.com";
-NSString * const MGSAuthorizationPath = @"authorize";
+NSString * const MGSServerURLPath = @"https://api.vk.com";
 NSString * const MGSAuthorizationRedirectURLPath = @"http://oauth.vk.com/blank.html";
+NSString * const MGSAuthorizationLoginMethodPath = @"authorize";
+NSString * const MGSAuthorizationLogoutMethodPath = @"oauth/logout";
+NSString * const MGSFriendsMethodPath = @"method/friends.get";
 
 @end
 
@@ -41,5 +81,18 @@ NSString * const MGSAuthorizationRedirectURLPath = @"http://oauth.vk.com/blank.h
 
 NSString * const MGSUserDeniedRequestError = @"http://api.vk.com/blank.html#error=access_denied&error_reason=user_denied&error_description=User%20denied%20your%20request";
 NSString * const MGSDomainError = @"com.vk.ErrorDomain";
+
+@end
+
+@implementation MGSNetwork (Cache)
+
++ (void)clearCache {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in [storage cookies]) {
+        [storage deleteCookie:cookie];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 @end

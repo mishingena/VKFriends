@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E577B89339FDB118915C920 /* libPods-VKFriends.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DD97EE624338D415881DCE /* libPods-VKFriends.a */; };
 		B20398E71BC00A2400256C8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398E61BC00A2400256C8F /* main.m */; };
 		B20398EA1BC00A2400256C8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398E91BC00A2400256C8F /* AppDelegate.m */; };
 		B20398ED1BC00A2400256C8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398EC1BC00A2400256C8F /* ViewController.m */; };
@@ -25,11 +26,24 @@
 		B203991F1BC0761800256C8F /* NSString+MGS.m in Sources */ = {isa = PBXBuildFile; fileRef = B203991E1BC0761800256C8F /* NSString+MGS.m */; settings = {ASSET_TAGS = (); }; };
 		B24F7D441BC19DEF0059469B /* MGSTokenProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B24F7D431BC19DEF0059469B /* MGSTokenProvider.m */; settings = {ASSET_TAGS = (); }; };
 		B24F7D471BC1A8820059469B /* MGSTransportLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B24F7D461BC1A8820059469B /* MGSTransportLayer.m */; settings = {ASSET_TAGS = (); }; };
-		B24F7D4A1BC1ABBE0059469B /* MGSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B24F7D491BC1ABBE0059469B /* MGSParser.m */; settings = {ASSET_TAGS = (); }; };
 		B24F7D4D1BC1B2600059469B /* MGSGroupOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B24F7D4C1BC1B2600059469B /* MGSGroupOperation.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA44A1BC42297007D0785 /* MGSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4491BC42297007D0785 /* MGSFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA44D1BC459F3007D0785 /* MGSEntityFabric.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA44C1BC459F3007D0785 /* MGSEntityFabric.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA4501BC46459007D0785 /* UIViewController+MGS.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA44F1BC46459007D0785 /* UIViewController+MGS.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA4531BC47AEA007D0785 /* MGSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4521BC47AEA007D0785 /* MGSSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA4581BC5197A007D0785 /* VKFriend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4551BC5197A007D0785 /* VKFriend+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA4591BC5197A007D0785 /* VKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4571BC5197A007D0785 /* VKFriend.m */; settings = {ASSET_TAGS = (); }; };
+		B2B6AFCB1BC295AF001B1BD5 /* MGSEasyMappingParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFCA1BC295AF001B1BD5 /* MGSEasyMappingParser.m */; settings = {ASSET_TAGS = (); }; };
+		B2B6AFCF1BC298EF001B1BD5 /* MGSMappingFabric.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFCE1BC298EF001B1BD5 /* MGSMappingFabric.m */; settings = {ASSET_TAGS = (); }; };
+		B2B6AFD81BC29B50001B1BD5 /* MGSParserFabric.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFD71BC29B50001B1BD5 /* MGSParserFabric.m */; settings = {ASSET_TAGS = (); }; };
+		B2B6AFDD1BC2A5A0001B1BD5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFDB1BC2A5A0001B1BD5 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		B2B6AFF61BC30F66001B1BD5 /* MGSCacheLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFF51BC30F66001B1BD5 /* MGSCacheLayer.m */; settings = {ASSET_TAGS = (); }; };
+		B2BF6FF21BC26079005D7120 /* MGSHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BF6FF11BC26079005D7120 /* MGSHTTPOperation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FBCB2550A05F31C3E6B901C /* Pods-VKFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.debug.xcconfig"; sourceTree = "<group>"; };
+		9BA62DB2C994B6BC52B27EF3 /* Pods-VKFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends.release.xcconfig"; sourceTree = "<group>"; };
 		B20398E21BC00A2400256C8F /* VKFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20398E61BC00A2400256C8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B20398E81BC00A2400256C8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,9 +80,32 @@
 		B24F7D451BC1A8820059469B /* MGSTransportLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSTransportLayer.h; sourceTree = "<group>"; };
 		B24F7D461BC1A8820059469B /* MGSTransportLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSTransportLayer.m; sourceTree = "<group>"; };
 		B24F7D481BC1ABBE0059469B /* MGSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSParser.h; sourceTree = "<group>"; };
-		B24F7D491BC1ABBE0059469B /* MGSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSParser.m; sourceTree = "<group>"; };
 		B24F7D4B1BC1B2600059469B /* MGSGroupOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSGroupOperation.h; sourceTree = "<group>"; };
 		B24F7D4C1BC1B2600059469B /* MGSGroupOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSGroupOperation.m; sourceTree = "<group>"; };
+		B27FA4481BC42297007D0785 /* MGSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSFriendsViewController.h; sourceTree = "<group>"; };
+		B27FA4491BC42297007D0785 /* MGSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSFriendsViewController.m; sourceTree = "<group>"; };
+		B27FA44B1BC459F3007D0785 /* MGSEntityFabric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSEntityFabric.h; sourceTree = "<group>"; };
+		B27FA44C1BC459F3007D0785 /* MGSEntityFabric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSEntityFabric.m; sourceTree = "<group>"; };
+		B27FA44E1BC46459007D0785 /* UIViewController+MGS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MGS.h"; sourceTree = "<group>"; };
+		B27FA44F1BC46459007D0785 /* UIViewController+MGS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MGS.m"; sourceTree = "<group>"; };
+		B27FA4511BC47AEA007D0785 /* MGSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSSettingsViewController.h; sourceTree = "<group>"; };
+		B27FA4521BC47AEA007D0785 /* MGSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSSettingsViewController.m; sourceTree = "<group>"; };
+		B27FA4541BC5197A007D0785 /* VKFriend+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VKFriend+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B27FA4551BC5197A007D0785 /* VKFriend+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKFriend+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B27FA4561BC5197A007D0785 /* VKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKFriend.h; sourceTree = "<group>"; };
+		B27FA4571BC5197A007D0785 /* VKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKFriend.m; sourceTree = "<group>"; };
+		B2B6AFC91BC295AF001B1BD5 /* MGSEasyMappingParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSEasyMappingParser.h; sourceTree = "<group>"; };
+		B2B6AFCA1BC295AF001B1BD5 /* MGSEasyMappingParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSEasyMappingParser.m; sourceTree = "<group>"; };
+		B2B6AFCD1BC298EF001B1BD5 /* MGSMappingFabric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSMappingFabric.h; sourceTree = "<group>"; };
+		B2B6AFCE1BC298EF001B1BD5 /* MGSMappingFabric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSMappingFabric.m; sourceTree = "<group>"; };
+		B2B6AFD61BC29B50001B1BD5 /* MGSParserFabric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSParserFabric.h; sourceTree = "<group>"; };
+		B2B6AFD71BC29B50001B1BD5 /* MGSParserFabric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSParserFabric.m; sourceTree = "<group>"; };
+		B2B6AFDC1BC2A5A0001B1BD5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B2B6AFF41BC30F66001B1BD5 /* MGSCacheLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSCacheLayer.h; sourceTree = "<group>"; };
+		B2B6AFF51BC30F66001B1BD5 /* MGSCacheLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSCacheLayer.m; sourceTree = "<group>"; };
+		B2BF6FF01BC26079005D7120 /* MGSHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSHTTPOperation.h; sourceTree = "<group>"; };
+		B2BF6FF11BC26079005D7120 /* MGSHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSHTTPOperation.m; sourceTree = "<group>"; };
+		E5DD97EE624338D415881DCE /* libPods-VKFriends.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFriends.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +113,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E577B89339FDB118915C920 /* libPods-VKFriends.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		259FEA3F0132C763F152D6C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5DD97EE624338D415881DCE /* libPods-VKFriends.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82A85403592F33989196C803 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FBCB2550A05F31C3E6B901C /* Pods-VKFriends.debug.xcconfig */,
+				9BA62DB2C994B6BC52B27EF3 /* Pods-VKFriends.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B20398D91BC00A2400256C8F = {
 			isa = PBXGroup;
 			children = (
 				B20398E41BC00A2400256C8F /* VKFriends */,
 				B20398E31BC00A2400256C8F /* Products */,
+				82A85403592F33989196C803 /* Pods */,
+				259FEA3F0132C763F152D6C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +160,15 @@
 			children = (
 				B20398E81BC00A2400256C8F /* AppDelegate.h */,
 				B20398E91BC00A2400256C8F /* AppDelegate.m */,
+				B2B6AFDA1BC2A57A001B1BD5 /* CoreData */,
 				B24F7D4E1BC1B30C0059469B /* API */,
 				B203991B1BC03E5300256C8F /* Categories */,
 				B20398EB1BC00A2400256C8F /* ViewController.h */,
 				B20398EC1BC00A2400256C8F /* ViewController.m */,
+				B27FA4481BC42297007D0785 /* MGSFriendsViewController.h */,
+				B27FA4491BC42297007D0785 /* MGSFriendsViewController.m */,
+				B27FA4511BC47AEA007D0785 /* MGSSettingsViewController.h */,
+				B27FA4521BC47AEA007D0785 /* MGSSettingsViewController.m */,
 				B203991C1BC03FF400256C8F /* PrefixHeader.pch */,
 				B20398EE1BC00A2400256C8F /* Main.storyboard */,
 				B20398F11BC00A2400256C8F /* Assets.xcassets */,
@@ -151,6 +213,8 @@
 				B20399131BC0301C00256C8F /* NSError+MGS.m */,
 				B203991D1BC0761800256C8F /* NSString+MGS.h */,
 				B203991E1BC0761800256C8F /* NSString+MGS.m */,
+				B27FA44E1BC46459007D0785 /* UIViewController+MGS.h */,
+				B27FA44F1BC46459007D0785 /* UIViewController+MGS.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -159,20 +223,51 @@
 			isa = PBXGroup;
 			children = (
 				B203990B1BC00FBB00256C8F /* Authorization */,
+				B20399081BC00DFA00256C8F /* MGSServiceLayer.h */,
+				B20399091BC00DFA00256C8F /* MGSServiceLayer.m */,
+				B2B6AFF41BC30F66001B1BD5 /* MGSCacheLayer.h */,
+				B2B6AFF51BC30F66001B1BD5 /* MGSCacheLayer.m */,
 				B20398FF1BC00A9A00256C8F /* MGSService.h */,
 				B20399001BC00A9A00256C8F /* MGSService.m */,
 				B24F7D451BC1A8820059469B /* MGSTransportLayer.h */,
 				B24F7D461BC1A8820059469B /* MGSTransportLayer.m */,
-				B24F7D481BC1ABBE0059469B /* MGSParser.h */,
-				B24F7D491BC1ABBE0059469B /* MGSParser.m */,
+				B2B6AFCD1BC298EF001B1BD5 /* MGSMappingFabric.h */,
+				B2B6AFCE1BC298EF001B1BD5 /* MGSMappingFabric.m */,
+				B2B6AFD61BC29B50001B1BD5 /* MGSParserFabric.h */,
+				B2B6AFD71BC29B50001B1BD5 /* MGSParserFabric.m */,
+				B27FA44B1BC459F3007D0785 /* MGSEntityFabric.h */,
+				B27FA44C1BC459F3007D0785 /* MGSEntityFabric.m */,
+				B2B6AFCC1BC2970C001B1BD5 /* Parser */,
+				B2BF6FF01BC26079005D7120 /* MGSHTTPOperation.h */,
+				B2BF6FF11BC26079005D7120 /* MGSHTTPOperation.m */,
 				B24F7D4B1BC1B2600059469B /* MGSGroupOperation.h */,
 				B24F7D4C1BC1B2600059469B /* MGSGroupOperation.m */,
 				B20399021BC00B1E00256C8F /* MGSNetwork.h */,
 				B20399031BC00B1E00256C8F /* MGSNetwork.m */,
-				B20399081BC00DFA00256C8F /* MGSServiceLayer.h */,
-				B20399091BC00DFA00256C8F /* MGSServiceLayer.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		B2B6AFCC1BC2970C001B1BD5 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				B24F7D481BC1ABBE0059469B /* MGSParser.h */,
+				B2B6AFC91BC295AF001B1BD5 /* MGSEasyMappingParser.h */,
+				B2B6AFCA1BC295AF001B1BD5 /* MGSEasyMappingParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		B2B6AFDA1BC2A57A001B1BD5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B27FA4541BC5197A007D0785 /* VKFriend+CoreDataProperties.h */,
+				B27FA4551BC5197A007D0785 /* VKFriend+CoreDataProperties.m */,
+				B27FA4561BC5197A007D0785 /* VKFriend.h */,
+				B27FA4571BC5197A007D0785 /* VKFriend.m */,
+				B2B6AFDB1BC2A5A0001B1BD5 /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B20398F91BC00A2400256C8F /* Build configuration list for PBXNativeTarget "VKFriends" */;
 			buildPhases = (
+				4AA88C4806AB10E442A27B33 /* Check Pods Manifest.lock */,
 				B20398DE1BC00A2400256C8F /* Sources */,
 				B20398DF1BC00A2400256C8F /* Frameworks */,
 				B20398E01BC00A2400256C8F /* Resources */,
+				20ADCB480AD3369439CCACA5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,25 +338,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20ADCB480AD3369439CCACA5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFriends/Pods-VKFriends-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AA88C4806AB10E442A27B33 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B20398DE1BC00A2400256C8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B20399171BC032E800256C8F /* MGSCredentialsStorage.m in Sources */,
+				B2B6AFD81BC29B50001B1BD5 /* MGSParserFabric.m in Sources */,
 				B203990E1BC0107D00256C8F /* MGSAuthorizationTransportLayer.m in Sources */,
 				B20399041BC00B1E00256C8F /* MGSNetwork.m in Sources */,
 				B24F7D471BC1A8820059469B /* MGSTransportLayer.m in Sources */,
+				B2B6AFCB1BC295AF001B1BD5 /* MGSEasyMappingParser.m in Sources */,
 				B203991F1BC0761800256C8F /* NSString+MGS.m in Sources */,
 				B24F7D441BC19DEF0059469B /* MGSTokenProvider.m in Sources */,
+				B2B6AFF61BC30F66001B1BD5 /* MGSCacheLayer.m in Sources */,
+				B2B6AFCF1BC298EF001B1BD5 /* MGSMappingFabric.m in Sources */,
+				B27FA4591BC5197A007D0785 /* VKFriend.m in Sources */,
 				B20399141BC0301C00256C8F /* NSError+MGS.m in Sources */,
+				B2B6AFDD1BC2A5A0001B1BD5 /* Model.xcdatamodeld in Sources */,
 				B203990A1BC00DFA00256C8F /* MGSServiceLayer.m in Sources */,
 				B20399011BC00A9A00256C8F /* MGSService.m in Sources */,
+				B27FA44A1BC42297007D0785 /* MGSFriendsViewController.m in Sources */,
+				B27FA4531BC47AEA007D0785 /* MGSSettingsViewController.m in Sources */,
 				B203991A1BC033AE00256C8F /* MGSAuthorizationCredentials.m in Sources */,
-				B24F7D4A1BC1ABBE0059469B /* MGSParser.m in Sources */,
+				B27FA4581BC5197A007D0785 /* VKFriend+CoreDataProperties.m in Sources */,
 				B20399111BC0217600256C8F /* MGSAuthorizationParameters.m in Sources */,
 				B20398ED1BC00A2400256C8F /* ViewController.m in Sources */,
+				B2BF6FF21BC26079005D7120 /* MGSHTTPOperation.m in Sources */,
+				B27FA44D1BC459F3007D0785 /* MGSEntityFabric.m in Sources */,
 				B24F7D4D1BC1B2600059469B /* MGSGroupOperation.m in Sources */,
+				B27FA4501BC46459007D0785 /* UIViewController+MGS.m in Sources */,
 				B20398EA1BC00A2400256C8F /* AppDelegate.m in Sources */,
 				B20398E71BC00A2400256C8F /* main.m in Sources */,
 				B20399071BC00C2700256C8F /* MGSAuthorizationService.m in Sources */,
@@ -372,11 +513,13 @@
 		};
 		B20398FA1BC00A2400256C8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FBCB2550A05F31C3E6B901C /* Pods-VKFriends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VKFriends/PrefixHeader.pch";
 				INFOPLIST_FILE = VKFriends/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gena.VKFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,11 +528,13 @@
 		};
 		B20398FB1BC00A2400256C8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BA62DB2C994B6BC52B27EF3 /* Pods-VKFriends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/VKFriends/PrefixHeader.pch";
 				INFOPLIST_FILE = VKFriends/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gena.VKFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +563,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B2B6AFDB1BC2A5A0001B1BD5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B2B6AFDC1BC2A5A0001B1BD5 /* Model.xcdatamodel */,
+			);
+			currentVersion = B2B6AFDC1BC2A5A0001B1BD5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B20398DA1BC00A2400256C8F /* Project object */;
 }

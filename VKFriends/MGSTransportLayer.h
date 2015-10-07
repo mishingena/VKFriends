@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MGSNetwork.h"
 
-@class MGSParser;
+@protocol MGSParser;
 
 @interface MGSTransportLayer : NSObject
 
@@ -18,7 +18,11 @@
 - (instancetype)initWithServerURL:(NSString *)serverURL
                              path:(NSString *)path
                        httpMethod:(MGSHTTPMethod)httpMethod
-                           parser:(MGSParser *)parser;
+                           parser:(id<MGSParser>)parser
+                needAuthorization:(BOOL)needAuth
+                  cacheEntityName:(NSString *)entityName;
+
+- (void)setSortParameters:(NSString *)parameters;
 
 - (NSOperation *)sendRequestWithParams:(nullable NSDictionary *)params onComplete:(OnComplete)aOnComplete;
 
