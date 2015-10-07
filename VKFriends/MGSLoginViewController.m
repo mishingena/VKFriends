@@ -6,26 +6,28 @@
 //  Copyright © 2015 Gena. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MGSLoginViewController.h"
 #import "MGSServiceLayer.h"
 #import "MGSAuthorizationService.h"
 #import "MGSTokenProvider.h"
 #import "NSError+MGS.h"
 
-@interface ViewController () <MGSAuthorizationServiceDelegate>
+static float const NavigationBarHeight = 20.0;
+
+@interface MGSLoginViewController () <MGSAuthorizationServiceDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndiactor;
 
 @end
 
-@implementation ViewController
+@implementation MGSLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     CGRect frame = self.view.bounds;
-    frame.origin.y = 20.0;
+    frame.origin.y = NavigationBarHeight;
     UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
     webView.scalesPageToFit = YES;
     [self.view addSubview:webView];
@@ -39,7 +41,6 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-//    [self showActivityIndicator];
     __weak typeof (self) wSelf = self;
     [MGSNetwork isReachable:^(BOOL reachable) {
         __strong typeof (self) self = wSelf;
@@ -53,12 +54,9 @@
 }
 
 - (void)tryLogin {
-//    [self showActivityIndicator];
-    
     __weak typeof (self) wSelf = self;
     [AppServiceLayer.authorizationService authorizeInWebView:self.webView withCompletion:^(id  _Nullable result, NSError * _Nullable error) {
         __strong typeof (self) self = wSelf;
-//        [self hideActivityIndicator];
         if (error) {
             [self showAlertControolerWithError:error];
         } else {

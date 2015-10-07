@@ -11,37 +11,16 @@
 
 @implementation MGSNetwork
 
-//+ (BOOL)isReachable {
-//    return [AFNetworkReachabilityManager sharedManager].isReachable;
-//}
-
-//+ (void)isReachable:(void (^)(BOOL))completion {
-//    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        switch (status) {
-//            case AFNetworkReachabilityStatusUnknown:
-//            case AFNetworkReachabilityStatusReachableViaWWAN:
-//            case AFNetworkReachabilityStatusReachableViaWiFi:
-//                //available
-//                break;
-//            case AFNetworkReachabilityStatusNotReachable:
-//                //not available
-//                break;
-//            default:
-//                break;
-//        }
-//        
-//        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
-//        
-//    }];
-//}
-
-
 + (void)isReachable:(void (^)(BOOL))completion {
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            completion(NO);
+            if (completion) {
+                completion(NO);
+            }
         } else {
-            completion(YES);
+            if (completion) {
+                completion(YES);
+            }
         }
     }];
     

@@ -9,12 +9,7 @@
 #import "AppDelegate.h"
 #import "MGSServiceLayer.h"
 #import "MGSNetwork.h"
-
-//#import <MagicalRecord/MagicalRecord.h>
 #import "MGSCacheLayer.h"
-#import <AFNetworking/AFNetworking.h>
-//#import "VKFriend.h"
-//#import <CoreData/CoreData.h>
 
 NSString * const ApplicationID = @"5089959";
 
@@ -32,42 +27,7 @@ NSString * const ApplicationID = @"5089959";
     
     self.serviceLayer = [[MGSServiceLayer alloc] initWithServerURL:MGSServerURLPath applicationID:ApplicationID];
 
-//    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model"];
-    
-//    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     self.cacheLayer = [[MGSCacheLayer alloc] initWithDefaultContext];
-    
-    
-//    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
-//    }];
-//    
-//    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    
-//    VKFriend *friend = [VKFriend MR_createEntity];
-//    [self.cacheLayer.context MR_saveToPersistentStoreAndWait];
-//    
-//    [self.cacheLayer.context MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
-//        
-//    }];
-    
-    
-//    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-//        VKFriend *localFriend = [friend MR_inContext:localContext];
-//        localFriend.firstName = @"John";
-//        localFriend.lastName = @"Appleseed";
-//    }];
-    
-//    VKFriend *friend = [VKFriend MR_createEntityInContext:self.cacheLayer.context];
-//    VKFriend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"VKFriend" inManagedObjectContext:self.cacheLayer.context];
-//    
-//    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-//        VKFriend *localFriend = [friend MR_inContext:self.cacheLayer.context];
-//        localFriend.firstName = @"John";
-//        localFriend.lastName = @"Appleseed";
-//    }];
-    
-//    NSArray *friends = [VKFriend MR_findAllInContext:self.cacheLayer.context];
 
     return YES;
 }

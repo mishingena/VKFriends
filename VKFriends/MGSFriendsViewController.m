@@ -13,6 +13,8 @@
 #import "VKFriend.h"
 #import "UIViewController+MGS.h"
 #import "MGSCacheLayer.h"
+#import "MGSImageService.h"
+#import "MGSFriendCell.h"
 
 @interface MGSFriendsViewController ()
 
@@ -65,13 +67,14 @@
 
 - (void)loadData {
     NSDictionary *params = @{
-                             @"fields": @"photo_50",
+                             @"fields": @"photo_100",
                              };
     [self showActivityIndicator];
     __weak typeof (self) wSelf = self;
     [AppServiceLayer.friendsListService requestWithParameters:params onComplete:^(id  _Nullable result, NSError * _Nullable error) {
         __strong typeof (self) self = wSelf;
         self.friends = result;
+    
         [self hideActivityIndicator];
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
@@ -130,14 +133,29 @@
     return self.friends.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MGSFriendCell *friendCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     VKFriend *friend = self.friends[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
     
-    return cell;
+    friendCell.friendTextLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
+    friendCell.friendImage.layer.cornerRadius = friendCell.friendImage.frame.size.width / 2;
+    friendCell.friendImage.layer.masksToBounds = YES;
+    
+    if (friend.imageSmall) {
+        UIImage *image = [UIImage imageWithData:friend.imageSmall];
+        friendCell.friendImage.image = image;
+    } else {
+        friendCell.friendImage.image = [UIImage imageNamed:@"vk_no_image"];
+        [AppServiceLayer.imageService requestImageWithURL:friend.photoURLString
+                                                   entity:friend
+                                            entityKeyPath:@"imageSmall"
+                                               onComplete:^(id  _Nullable result, NSError * _Nullable error) {
+                                                   [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                                               }];
+    }
+    
+    return friendCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

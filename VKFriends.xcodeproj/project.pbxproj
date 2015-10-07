@@ -10,7 +10,7 @@
 		4E577B89339FDB118915C920 /* libPods-VKFriends.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DD97EE624338D415881DCE /* libPods-VKFriends.a */; };
 		B20398E71BC00A2400256C8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398E61BC00A2400256C8F /* main.m */; };
 		B20398EA1BC00A2400256C8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398E91BC00A2400256C8F /* AppDelegate.m */; };
-		B20398ED1BC00A2400256C8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398EC1BC00A2400256C8F /* ViewController.m */; };
+		B20398ED1BC00A2400256C8F /* MGSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20398EC1BC00A2400256C8F /* MGSLoginViewController.m */; };
 		B20398F01BC00A2400256C8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20398EE1BC00A2400256C8F /* Main.storyboard */; };
 		B20398F21BC00A2400256C8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20398F11BC00A2400256C8F /* Assets.xcassets */; };
 		B20398F51BC00A2400256C8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20398F31BC00A2400256C8F /* LaunchScreen.storyboard */; };
@@ -33,6 +33,8 @@
 		B27FA4531BC47AEA007D0785 /* MGSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4521BC47AEA007D0785 /* MGSSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B27FA4581BC5197A007D0785 /* VKFriend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4551BC5197A007D0785 /* VKFriend+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		B27FA4591BC5197A007D0785 /* VKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA4571BC5197A007D0785 /* VKFriend.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA45C1BC52B31007D0785 /* MGSImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA45B1BC52B31007D0785 /* MGSImageService.m */; settings = {ASSET_TAGS = (); }; };
+		B27FA45F1BC596C1007D0785 /* MGSFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FA45E1BC596C1007D0785 /* MGSFriendCell.m */; settings = {ASSET_TAGS = (); }; };
 		B2B6AFCB1BC295AF001B1BD5 /* MGSEasyMappingParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFCA1BC295AF001B1BD5 /* MGSEasyMappingParser.m */; settings = {ASSET_TAGS = (); }; };
 		B2B6AFCF1BC298EF001B1BD5 /* MGSMappingFabric.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFCE1BC298EF001B1BD5 /* MGSMappingFabric.m */; settings = {ASSET_TAGS = (); }; };
 		B2B6AFD81BC29B50001B1BD5 /* MGSParserFabric.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B6AFD71BC29B50001B1BD5 /* MGSParserFabric.m */; settings = {ASSET_TAGS = (); }; };
@@ -48,8 +50,8 @@
 		B20398E61BC00A2400256C8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B20398E81BC00A2400256C8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B20398E91BC00A2400256C8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B20398EB1BC00A2400256C8F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B20398EC1BC00A2400256C8F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B20398EB1BC00A2400256C8F /* MGSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGSLoginViewController.h; sourceTree = "<group>"; };
+		B20398EC1BC00A2400256C8F /* MGSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGSLoginViewController.m; sourceTree = "<group>"; };
 		B20398EF1BC00A2400256C8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B20398F11BC00A2400256C8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20398F41BC00A2400256C8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,10 @@
 		B27FA4551BC5197A007D0785 /* VKFriend+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKFriend+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B27FA4561BC5197A007D0785 /* VKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKFriend.h; sourceTree = "<group>"; };
 		B27FA4571BC5197A007D0785 /* VKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKFriend.m; sourceTree = "<group>"; };
+		B27FA45A1BC52B31007D0785 /* MGSImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSImageService.h; sourceTree = "<group>"; };
+		B27FA45B1BC52B31007D0785 /* MGSImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSImageService.m; sourceTree = "<group>"; };
+		B27FA45D1BC596C1007D0785 /* MGSFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSFriendCell.h; sourceTree = "<group>"; };
+		B27FA45E1BC596C1007D0785 /* MGSFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSFriendCell.m; sourceTree = "<group>"; };
 		B2B6AFC91BC295AF001B1BD5 /* MGSEasyMappingParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSEasyMappingParser.h; sourceTree = "<group>"; };
 		B2B6AFCA1BC295AF001B1BD5 /* MGSEasyMappingParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSEasyMappingParser.m; sourceTree = "<group>"; };
 		B2B6AFCD1BC298EF001B1BD5 /* MGSMappingFabric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSMappingFabric.h; sourceTree = "<group>"; };
@@ -163,12 +169,8 @@
 				B2B6AFDA1BC2A57A001B1BD5 /* CoreData */,
 				B24F7D4E1BC1B30C0059469B /* API */,
 				B203991B1BC03E5300256C8F /* Categories */,
-				B20398EB1BC00A2400256C8F /* ViewController.h */,
-				B20398EC1BC00A2400256C8F /* ViewController.m */,
-				B27FA4481BC42297007D0785 /* MGSFriendsViewController.h */,
-				B27FA4491BC42297007D0785 /* MGSFriendsViewController.m */,
-				B27FA4511BC47AEA007D0785 /* MGSSettingsViewController.h */,
-				B27FA4521BC47AEA007D0785 /* MGSSettingsViewController.m */,
+				B27FA4611BC5B03D007D0785 /* Cells */,
+				B27FA4621BC5B05C007D0785 /* ViewControllers */,
 				B203991C1BC03FF400256C8F /* PrefixHeader.pch */,
 				B20398EE1BC00A2400256C8F /* Main.storyboard */,
 				B20398F11BC00A2400256C8F /* Assets.xcassets */,
@@ -223,29 +225,85 @@
 			isa = PBXGroup;
 			children = (
 				B203990B1BC00FBB00256C8F /* Authorization */,
+				B27FA4631BC5B0C8007D0785 /* Layers */,
+				B27FA4641BC5B0E1007D0785 /* Services */,
+				B27FA4651BC5B0F2007D0785 /* Fabric classes */,
+				B2B6AFCC1BC2970C001B1BD5 /* Parser */,
+				B27FA4601BC5B016007D0785 /* Operations */,
+				B20399021BC00B1E00256C8F /* MGSNetwork.h */,
+				B20399031BC00B1E00256C8F /* MGSNetwork.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		B27FA4601BC5B016007D0785 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				B2BF6FF01BC26079005D7120 /* MGSHTTPOperation.h */,
+				B2BF6FF11BC26079005D7120 /* MGSHTTPOperation.m */,
+				B24F7D4B1BC1B2600059469B /* MGSGroupOperation.h */,
+				B24F7D4C1BC1B2600059469B /* MGSGroupOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		B27FA4611BC5B03D007D0785 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B27FA45D1BC596C1007D0785 /* MGSFriendCell.h */,
+				B27FA45E1BC596C1007D0785 /* MGSFriendCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B27FA4621BC5B05C007D0785 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B20398EB1BC00A2400256C8F /* MGSLoginViewController.h */,
+				B20398EC1BC00A2400256C8F /* MGSLoginViewController.m */,
+				B27FA4481BC42297007D0785 /* MGSFriendsViewController.h */,
+				B27FA4491BC42297007D0785 /* MGSFriendsViewController.m */,
+				B27FA4511BC47AEA007D0785 /* MGSSettingsViewController.h */,
+				B27FA4521BC47AEA007D0785 /* MGSSettingsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B27FA4631BC5B0C8007D0785 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
 				B20399081BC00DFA00256C8F /* MGSServiceLayer.h */,
 				B20399091BC00DFA00256C8F /* MGSServiceLayer.m */,
 				B2B6AFF41BC30F66001B1BD5 /* MGSCacheLayer.h */,
 				B2B6AFF51BC30F66001B1BD5 /* MGSCacheLayer.m */,
-				B20398FF1BC00A9A00256C8F /* MGSService.h */,
-				B20399001BC00A9A00256C8F /* MGSService.m */,
 				B24F7D451BC1A8820059469B /* MGSTransportLayer.h */,
 				B24F7D461BC1A8820059469B /* MGSTransportLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		B27FA4641BC5B0E1007D0785 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B20398FF1BC00A9A00256C8F /* MGSService.h */,
+				B20399001BC00A9A00256C8F /* MGSService.m */,
+				B27FA45A1BC52B31007D0785 /* MGSImageService.h */,
+				B27FA45B1BC52B31007D0785 /* MGSImageService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B27FA4651BC5B0F2007D0785 /* Fabric classes */ = {
+			isa = PBXGroup;
+			children = (
 				B2B6AFCD1BC298EF001B1BD5 /* MGSMappingFabric.h */,
 				B2B6AFCE1BC298EF001B1BD5 /* MGSMappingFabric.m */,
 				B2B6AFD61BC29B50001B1BD5 /* MGSParserFabric.h */,
 				B2B6AFD71BC29B50001B1BD5 /* MGSParserFabric.m */,
 				B27FA44B1BC459F3007D0785 /* MGSEntityFabric.h */,
 				B27FA44C1BC459F3007D0785 /* MGSEntityFabric.m */,
-				B2B6AFCC1BC2970C001B1BD5 /* Parser */,
-				B2BF6FF01BC26079005D7120 /* MGSHTTPOperation.h */,
-				B2BF6FF11BC26079005D7120 /* MGSHTTPOperation.m */,
-				B24F7D4B1BC1B2600059469B /* MGSGroupOperation.h */,
-				B24F7D4C1BC1B2600059469B /* MGSGroupOperation.m */,
-				B20399021BC00B1E00256C8F /* MGSNetwork.h */,
-				B20399031BC00B1E00256C8F /* MGSNetwork.m */,
 			);
-			name = API;
+			name = "Fabric classes";
 			sourceTree = "<group>";
 		};
 		B2B6AFCC1BC2970C001B1BD5 /* Parser */ = {
@@ -381,6 +439,7 @@
 				B203990E1BC0107D00256C8F /* MGSAuthorizationTransportLayer.m in Sources */,
 				B20399041BC00B1E00256C8F /* MGSNetwork.m in Sources */,
 				B24F7D471BC1A8820059469B /* MGSTransportLayer.m in Sources */,
+				B27FA45C1BC52B31007D0785 /* MGSImageService.m in Sources */,
 				B2B6AFCB1BC295AF001B1BD5 /* MGSEasyMappingParser.m in Sources */,
 				B203991F1BC0761800256C8F /* NSString+MGS.m in Sources */,
 				B24F7D441BC19DEF0059469B /* MGSTokenProvider.m in Sources */,
@@ -390,13 +449,14 @@
 				B20399141BC0301C00256C8F /* NSError+MGS.m in Sources */,
 				B2B6AFDD1BC2A5A0001B1BD5 /* Model.xcdatamodeld in Sources */,
 				B203990A1BC00DFA00256C8F /* MGSServiceLayer.m in Sources */,
+				B27FA45F1BC596C1007D0785 /* MGSFriendCell.m in Sources */,
 				B20399011BC00A9A00256C8F /* MGSService.m in Sources */,
 				B27FA44A1BC42297007D0785 /* MGSFriendsViewController.m in Sources */,
 				B27FA4531BC47AEA007D0785 /* MGSSettingsViewController.m in Sources */,
 				B203991A1BC033AE00256C8F /* MGSAuthorizationCredentials.m in Sources */,
 				B27FA4581BC5197A007D0785 /* VKFriend+CoreDataProperties.m in Sources */,
 				B20399111BC0217600256C8F /* MGSAuthorizationParameters.m in Sources */,
-				B20398ED1BC00A2400256C8F /* ViewController.m in Sources */,
+				B20398ED1BC00A2400256C8F /* MGSLoginViewController.m in Sources */,
 				B2BF6FF21BC26079005D7120 /* MGSHTTPOperation.m in Sources */,
 				B27FA44D1BC459F3007D0785 /* MGSEntityFabric.m in Sources */,
 				B24F7D4D1BC1B2600059469B /* MGSGroupOperation.m in Sources */,

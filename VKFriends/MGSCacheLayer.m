@@ -11,6 +11,7 @@
 #import <MagicalRecord/MagicalRecord+ShorthandMethods.h>
 #import <MagicalRecord/MagicalRecordShorthandMethodAliases.h>
 #import <CoreData/CoreData.h>
+#import "VKFriend.h"
 
 NSString * const MGSNotificationCacheCleared = @"MGSNotificationCacheCleared";
 
@@ -69,6 +70,16 @@ NSString * const MGSNotificationCacheCleared = @"MGSNotificationCacheCleared";
     id fetchedObjects = [ClassToFetch MR_findAllSortedBy:sortParameterts ascending:YES inContext:self.context];
     completion(fetchedObjects);
     
+}
+
+- (void)updateEntity:(id)entity
+          withObject:(id)object
+       entityKeyPath:(NSString *)keyPath
+          completion:(void(^)(BOOL contextDidSave, NSError *error))completion {
+    [entity setValue:object forKey:keyPath];
+    [self save:^(BOOL contextDidSave, NSError * _Nonnull error) {
+        completion(contextDidSave, error);
+    }];
 }
 
 @end

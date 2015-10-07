@@ -15,14 +15,13 @@
 #import "MGSTransportLayer.h"
 #import "MGSParserFabric.h"
 #import "MGSEntityFabric.h"
+#import "MGSImageService.h"
 
 @interface MGSServiceLayer ()
 
-@property (nonatomic, strong, readwrite) MGSAuthorizationService *authorizationLoginService;
-@property (nonatomic, strong, readwrite) MGSAuthorizationService *authorizationLogoutService;
-
 @property (nonatomic, strong, readwrite) MGSAuthorizationService *authorizationService;
 @property (nonatomic, strong, readwrite) MGSService *friendsListService;
+@property (nonatomic, strong, readwrite) MGSImageService *imageService;
 
 @property (nonatomic, strong) NSString *serverURL;
 @property (nonatomic, strong) NSString *appID;
@@ -53,27 +52,6 @@
     return _authorizationService;
 }
 
-//- (MGSAuthorizationService *)authorizationLoginService {
-//    if (!_authorizationLoginService) {
-//        MGSAuthorizationParameters *parameters = [[MGSAuthorizationParameters alloc] initWithApplicationID:self.appID scope:MGSVKScopeFriends redirectURl:MGSAuthorizationRedirectURLPath];
-//        
-//        MGSAuthorizationTransportLayer *transportLayer = [[MGSAuthorizationTransportLayer alloc] initWithServerURL:MGSAuthorizationServerURLPath path:MGSAuthorizationLoginMethodPath parameters:parameters];
-//        
-//        _authorizationLoginService = [[MGSAuthorizationService alloc] initWithTransportLayer:transportLayer];
-//    }
-//    return _authorizationLoginService;
-//}
-//
-//- (MGSAuthorizationService *)authorizationLogoutService {
-//    if (!_authorizationLogoutService) {
-//        
-//        MGSAuthorizationTransportLayer *transportLayer = [[MGSAuthorizationTransportLayer alloc] initWithServerURL:self.serverURL path:MGSAuthorizationLogoutMethodPath parameters:nil];
-//        
-//        _authorizationLogoutService = [[MGSAuthorizationService alloc] initWithTransportLayer:transportLayer];
-//    }
-//    return _authorizationLogoutService;
-//}
-
 - (MGSService *)friendsListService {
     if (!_friendsListService) {
         MGSTransportLayer *transportLayer = [[MGSTransportLayer alloc] initWithServerURL:self.serverURL
@@ -86,6 +64,13 @@
         _friendsListService = [[MGSService alloc] initWithTransportLayer:transportLayer];
     }
     return _friendsListService;
+}
+
+- (MGSImageService *)imageService {
+    if (!_imageService) {
+        _imageService = [[MGSImageService alloc] init];
+    }
+    return _imageService;
 }
 
 @end

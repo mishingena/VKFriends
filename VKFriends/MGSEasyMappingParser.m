@@ -57,7 +57,9 @@
                 error = [NSError mgs_errorWithDescription:@"Couldn't find data to parse"];
             }
         }
-        aOnComplete(result, error);
+        if (aOnComplete) {
+            aOnComplete(result, error);
+        }
     }];
     
     [self.queue addOperation:operation];

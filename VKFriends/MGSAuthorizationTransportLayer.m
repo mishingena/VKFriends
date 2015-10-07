@@ -50,7 +50,6 @@
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     return request;
-//    return [NSURLRequest requestWithURL:url];
 }
 
 @end

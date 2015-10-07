@@ -20,6 +20,7 @@
 + (BOOL)isTokenValid {
     NSDate *currentDate = [NSDate date];
     MGSAuthorizationCredentials *authCredentials = [MGSCredentialsStorage loadCredentials];
+    
     //if currentDate later than tokenExpireDate
     if ([currentDate compare:authCredentials.tokenExpireDate] == NSOrderedDescending) {
         return NO;

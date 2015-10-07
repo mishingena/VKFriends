@@ -14,7 +14,6 @@ typedef void(^OnComplete)(id __nullable result, NSError * __nullable error);
 
 @interface MGSNetwork : NSObject
 
-//+ (BOOL)isReachable;
 + (void)isReachable:(void(^)(BOOL reachable))completion;
 
 @end

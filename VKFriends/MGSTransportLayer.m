@@ -71,7 +71,9 @@
 
 - (void)fetchFromCache:(OnComplete)onComplete {
     [AppCacheLayer fetchAllEntityForName:self.cacheEntityName sortParameterts:self.sortParams withCompletion:^(id result) {
-        onComplete(result, nil);
+        if (onComplete) {
+            onComplete(result, nil);
+        }
     }];
 }
 
@@ -91,7 +93,7 @@
     
     __block NSOperation *httpOperation;
     
-    //проверяем есть ли подключение к инернету
+    //проверяем есть ли подключение к интернету
     __weak typeof (self) wSelf = self;
     [MGSNetwork isReachable:^(BOOL reachable) {
         __strong typeof (self) self = wSelf;
@@ -104,7 +106,9 @@
             NSError *error = [NSError mgs_errorWithDescription:@"No internet connection"];
             if (self.cacheEntityName) {
                 [AppCacheLayer fetchAllEntityForName:self.cacheEntityName sortParameterts:self.sortParams withCompletion:^(id result) {
-                    onComplete(result, error);
+                    if (onComplete) {
+                        onComplete(result, error);
+                    }
                 }];
             }
         }

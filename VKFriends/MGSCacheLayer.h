@@ -25,6 +25,11 @@ extern NSString * const MGSNotificationCacheCleared;
 - (void)fetchAllEntityForName:(NSString *)entityName withCompletion:(void(^)(id __nullable result))completion;
 - (void)fetchAllEntityForName:(NSString *)entityName sortParameterts:(NSString * __nonnull)sortParameterts withCompletion:(void(^)(id __nullable result))completion;
 
+- (void)updateEntity:(id)entity
+          withObject:(id)object
+       entityKeyPath:(NSString *)keyPath
+          completion:(void(^)(BOOL contextDidSave, NSError *error))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

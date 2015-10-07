@@ -16,7 +16,7 @@
         [mapping mapPropertiesFromDictionary:@{
                                                @"first_name": @"firstName",
                                                @"last_name": @"lastName",
-                                               @"photo_50": @"photoURLString",
+                                               @"photo_100": @"photoURLString",
                                                @"user_id": @"id"
                                                }];
         [mapping setPrimaryKey:@"id"];

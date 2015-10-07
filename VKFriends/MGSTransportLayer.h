@@ -11,6 +11,8 @@
 
 @protocol MGSParser;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MGSTransportLayer : NSObject
 
 @property (nonatomic, strong) NSOperationQueue *queue;
@@ -27,3 +29,5 @@
 - (NSOperation *)sendRequestWithParams:(nullable NSDictionary *)params onComplete:(OnComplete)aOnComplete;
 
 @end
+
+NS_ASSUME_NONNULL_END

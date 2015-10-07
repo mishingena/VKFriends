@@ -50,13 +50,18 @@
 
 - (void)logoutInWebView:(UIWebView *)webView withCompletion:(OnComplete)block {
     
-    //vk api почему то не позволяет разлогиниться
+//    vk api почему то не позволяет разлогиниться
+//    [self.webView loadRequest:[self.logoutTransportLayer request]];
+    
+    
     [MGSCredentialsStorage resetCredentials];
     [MGSNetwork clearCache];
     
     //удаляю файлы из кеша
     [AppCacheLayer clean:^(BOOL contextDidSave, NSError *error) {
-        block(nil, error);
+        if (block) {
+            block(nil, error);
+        }
     }];
     
 }
@@ -150,11 +155,7 @@
     } else if ([webViewRequestString rangeOfString:@"error"].location != NSNotFound) {
         NSError *error = [NSError mgs_errorWithCode:12 description:@"Неизвестная ошибка"];
         [self sendError:error];
-    } //else {
-//        if (self.completionBlock) {
-//            self.completionBlock(nil, nil);
-//        }
-//    }
+    }
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
