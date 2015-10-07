@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
               entityKeyPath:(NSString *)keyPath
                  onComplete:(OnComplete)onComplete;
 
+- (void)stopAll;
+- (void)canLoad:(BOOL)enabled;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,11 +12,11 @@
 #import "MGSTokenProvider.h"
 #import "NSError+MGS.h"
 
-static float const NavigationBarHeight = 20.0;
+//static float const NavigationBarHeight = 20.0;
 
 @interface MGSLoginViewController () <MGSAuthorizationServiceDelegate>
 
-@property (nonatomic, weak) UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndiactor;
 
 @end
@@ -25,20 +25,12 @@ static float const NavigationBarHeight = 20.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    CGRect frame = self.view.bounds;
-    frame.origin.y = NavigationBarHeight;
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
-    webView.scalesPageToFit = YES;
-    [self.view addSubview:webView];
-    
-    self.webView = webView;
+
     AppServiceLayer.authorizationService.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     self.navigationController.navigationBarHidden = YES;
     
     __weak typeof (self) wSelf = self;

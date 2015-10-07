@@ -53,8 +53,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [AppServiceLayer.imageService canLoad:YES];
     self.navigationController.navigationBarHidden = NO;
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AppServiceLayer.imageService canLoad:NO];
 }
 
 - (void)cacheCleared {
@@ -110,6 +116,7 @@
 
 - (void)logoutPressed:(id)sender {
     UIWebView *webView = [UIWebView new];
+    [AppServiceLayer.imageService stopAll];
     
     __weak typeof (self) wSelf = self;
     [AppServiceLayer.authorizationService logoutInWebView:webView withCompletion:^(id  _Nullable result, NSError * _Nullable error) {
@@ -151,7 +158,9 @@
                                                    entity:friend
                                             entityKeyPath:@"imageSmall"
                                                onComplete:^(id  _Nullable result, NSError * _Nullable error) {
+                                                   [tableView beginUpdates];
                                                    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                                                   [tableView endUpdates];
                                                }];
     }
     
