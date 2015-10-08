@@ -54,7 +54,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [AppServiceLayer.imageService canLoad:YES];
+    if (self.friends) {
+        [AppServiceLayer.imageService canLoad:YES];
+    }
     self.navigationController.navigationBarHidden = NO;
     [self.tableView reloadData];
 }
@@ -85,7 +87,8 @@
     self.downloadFriendsListOperation = [AppServiceLayer.friendsListService requestWithParameters:params onComplete:^(id  _Nullable result, NSError * _Nullable error) {
         __strong typeof (self) self = wSelf;
         self.friends = result;
-    
+        
+        [AppServiceLayer.imageService canLoad:YES];
         [self hideActivityIndicator];
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
@@ -163,9 +166,11 @@
                                                    entity:friend
                                             entityKeyPath:@"imageSmall"
                                                onComplete:^(id  _Nullable result, NSError * _Nullable error) {
-                                                   [tableView beginUpdates];
-                                                   [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-                                                   [tableView endUpdates];
+                                                   if (tableView) {
+                                                       [tableView beginUpdates];
+                                                       [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                                                       [tableView endUpdates];
+                                                   }
                                                }];
     }
     
