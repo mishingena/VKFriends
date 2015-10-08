@@ -44,37 +44,46 @@
                      entity:(id)entity
               entityKeyPath:(NSString *)keyPath
                  onComplete:(OnComplete)onComplete {
-    if (!self.canceled) {
-        if (imageURl) {
-            __weak typeof (self) wSelf = self;
-            [self.sessionManager GET:imageURl parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-                __strong typeof (self) self = wSelf;
-                
-                if (!self.canceled) {
-                    NSData *imageData = UIImageJPEGRepresentation(responseObject, 1.0);
-                    [AppCacheLayer updateEntity:entity withObject:imageData entityKeyPath:keyPath completion:^(BOOL contextDidSave, NSError * _Nonnull error) {
-                        if (onComplete && !self.canceled) {
-                            onComplete(responseObject, error);
-                        }
-                    }];
+    __weak typeof (self) wSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        __strong typeof (self) self = wSelf;
+        if (!self.canceled) {
+            if (imageURl) {
+                __weak typeof (self) wSelf = self;
+                [self.sessionManager GET:imageURl parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+                    __strong typeof (self) self = wSelf;
                     
-                }
-                
+                    if (!self.canceled) {
+                        NSData *imageData = UIImageJPEGRepresentation(responseObject, 1.0);
+                        [AppCacheLayer updateEntity:entity withObject:imageData entityKeyPath:keyPath completion:^(BOOL contextDidSave, NSError * _Nonnull error) {
+                            if (onComplete && !self.canceled) {
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    onComplete(responseObject, error);
+                                });
+                                
+                            }
+                        }];
+                        
+                    }
+                    
                 } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
                     if (onComplete && !self.canceled) {
-                        onComplete(nil, error);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            onComplete(nil, error);
+                        });
+                        
                     }
                     
                 }];
-            
-        } else {
-            NSError *error = [NSError mgs_errorWithDescription:@"Empty image url string"];
-            if (onComplete && !self.canceled) {
-                onComplete(nil, error);
+                
+            } else {
+                NSError *error = [NSError mgs_errorWithDescription:@"Empty image url string"];
+                if (onComplete && !self.canceled) {
+                    onComplete(nil, error);
+                }
             }
         }
-    }
-    
+    });
 }
 
 @end

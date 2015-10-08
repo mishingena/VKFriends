@@ -12,8 +12,6 @@
 #import "MGSTokenProvider.h"
 #import "NSError+MGS.h"
 
-//static float const NavigationBarHeight = 20.0;
-
 @interface MGSLoginViewController () <MGSAuthorizationServiceDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

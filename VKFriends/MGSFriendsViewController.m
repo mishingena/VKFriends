@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) NSArray *friends;
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndiactor;
+@property (nonatomic, strong) NSOperation *downloadFriendsListOperation;
 
 @end
 
@@ -61,6 +62,10 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [AppServiceLayer.imageService canLoad:NO];
+    [self.refreshControl endRefreshing];
+    if (self.downloadFriendsListOperation) {
+        [self.downloadFriendsListOperation cancel];
+    }
 }
 
 - (void)cacheCleared {
@@ -77,7 +82,7 @@
                              };
     [self showActivityIndicator];
     __weak typeof (self) wSelf = self;
-    [AppServiceLayer.friendsListService requestWithParameters:params onComplete:^(id  _Nullable result, NSError * _Nullable error) {
+    self.downloadFriendsListOperation = [AppServiceLayer.friendsListService requestWithParameters:params onComplete:^(id  _Nullable result, NSError * _Nullable error) {
         __strong typeof (self) self = wSelf;
         self.friends = result;
     
